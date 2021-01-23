@@ -514,10 +514,10 @@ client.on('group-participants-update', async (anu) => {
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 				if (args.length < 1) return reply(ind.wrongf())
 				if (!q.includes('|')) return  reply(ind.wrongf())
-				const aruga1 = q.substring(0, q.indexOf('|') - 0)
-				const aruga2 = q.substring(q.lastIndexOf('|') + 1)
+				const arugash1 = q.substring(0, q.indexOf('|') - 0)
+				const arugash2 = q.substring(q.lastIndexOf('|') + 1)
 				reply(ind.wait())
-				aruga = await getBuffer(`https://arugaz.my.id/api/textpro/pornhub?text1=${aruga1}&text2=${aruga2}`)
+				aruga = await getBuffer(`https://arugaz.my.id/api/textpro/pornhub?text1=${arugash1}&text2=${arugash2}`)
 				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
 				await limitAdd(sender)
 				break 
