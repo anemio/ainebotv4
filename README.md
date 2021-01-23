@@ -1,6 +1,6 @@
-<div align="center">
-# <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"> I'm AINE
 
+# <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"> I'm AINE
+<div align="center">
 <p align="center">
 
 <img src="https://github.com/anemio/ainebotz/blob/main/temp/AINE.jpg" width="230" height="230"/>
