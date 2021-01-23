@@ -12,10 +12,11 @@
 </div>
 
 ## Thank you the owner of the APIKEY.
-Arugaz
-Toby
-zeks
-jojo
+* Arugaz
+* Toby
+* zeks
+* jojo
+* mnazria
 
 ## AINEBOT
 * [`MY FACEBOOK`](https://www.facebook.com/ainneboot)
