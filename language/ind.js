@@ -23,7 +23,7 @@ exports.lvlnoon = () => {
 }
 
 exports.noregis = () => {
-	return`*「 BELUM DAFTAR 」*\n\n*cara daftar ${prefix}daftar nama|umur* \n*contoh ${prefix}daftar affis|17*`
+	return`*「 BELUM DAFTAR 」*\n\n*cara daftar ${prefix}daftar nama|umur* \n*contoh ${prefix}daftar aine|22*`
 }
 
 exports.rediregis = () => {
@@ -31,11 +31,11 @@ exports.rediregis = () => {
 }
 
 exports.stikga = () => {
-	return`*yah gagal coba ulangi beberapa saat lagi*`
+	return`*Yah gagal coba ulangi beberapa saat lagi*`
 }
 
 exports.linkga = () => {
-	return`*maaf link tidak valid*`
+	return`*Maaf link tidak valid*`
 }
 
 exports.groupo = () => {
@@ -59,7 +59,7 @@ exports.badmin = () => {
 }
 
 exports.nsfwoff = () => {
-	return`*NSFW GAK AKTIF*`
+	return`*NSFW TIDAK AKTIF*`
 }
 
 exports.bug = () => {
@@ -71,7 +71,7 @@ exports.wrongf = () => {
 }
 
 exports.clears = () => {
-	return`*clear all Success*`
+	return`*Clear all Success*`
 }
 
 exports.pc = () => {
@@ -79,7 +79,7 @@ exports.pc = () => {
 }
 
 exports.registered = (namaUser, umurUser, serialUser, time, sender) => {
-	return`*「 DATA NEGARA 」*\n\nkamu sudah terdaftar dengan data \n\n┏━⊱nama\n┗⊱${namaUser}\n┏━⊱nomer\n┗⊱wa.me/${sender.split("@")[0]}\n┏━⊱umur\n┗⊱${umurUser}\n┏━⊱waktu pendaftaran\n┗⊱${time}\n\n┏━❉ *NS* ❉━\n┣⊱${serialUser}\n┗⊱NOTE : jangan sampai lupa nomer ini karena ini penting:v`
+	return`*「 DATA NEGARA 」*\n\nkamu sudah terdaftar dengan data \n\n┏━⊱nama\n┗⊱${namaUser}\n┏━⊱nomer\n┗⊱wa.me/${sender.split("@")[0]}\n┏━⊱umur\n┗⊱${umurUser}\n┏━⊱waktu pendaftaran\n┗⊱${time}\n\n┏━❉ *NS* ❉━\n┣⊱${serialUser}\n┗⊱NOTE : jangan sampai lupa nomer ini karena ini penting!`
 }
 
 exports.cmdnf = (prefix, command) => {
@@ -116,123 +116,245 @@ exports.reglevelahf = (command, pushname, getLevelingLevel, sender, ahf) => {
 
 exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp, _registered, uangku) => { 
 	return `
-╭══─⊱ ❰ *ABOUT USER* ❱ ⊰─══
-╠☞ *Nama* : ${pushname}
-╠☞ *Nomer* : wa.me/${sender.split("@")[0]}
-╠☞ *Uang mu* : Rp${uangku}
-╠☞ *XP* : ${getLevelingXp(sender)}/${reqXp}
-╠☞ *Level* : ${getLevelingLevel(sender)}
-╠☞ *User register* : ${_registered.length}
-╰════─⊱  ⸨ *AFFIS* ⸩  ⊰─════╯
+「 *AINE BOT* 」
+◪ *INFO*
+  ❏ Prefix: 「  ${prefix}  」
+  ❏ Owner: Muhammad Ridwan Reynaldy
+  ❏ Nama: ${pushname}
 
-            𝐑𝐮𝐥𝐞𝐬 - 𝐒𝐢𝐦𝐩𝐥𝐞
+  ❏ Uang mu : Rp${uangku}
+  ❏ Nomer: wa.me/${sender.split("@")[0]}
+  ❏ XP: ${getLevelingXp(sender)}/${reqXp}
+  ❏ Level: ${getLevelingLevel(sender)}
+  ❏ User register : ${_registered.length}
+
+            *Rules* - *Simple*
 ▬▭▬▭▬▭▬▭▬▭▬▭▬
-●⧐ *Spam : Auto Block!*
-●⧐ *Beri Jeda 5detik Saat Menggunakannya!!*
-●⧐ *Bug/Error Harap Cht Owner!*
-●⧐ *Untuk Memastikan Bot Off Atau On*
-●⧐ *Ketik ${prefix}bot*
-●⧐ *Harap Sabar Dengan Bug²nya!*
-●⧐ *Gunakan Bot Sebaik-baiknya!*
+  ❏ *Spam : Auto Block!*
+  ❏ *Beri Jeda 5detik Saat Menggunakannya!!*
+  ❏ *Bug/Error Harap Cht Owner!*
+  ❏ *Untuk Memastikan Bot Off Atau On*
+  ❏ *Ketik ${prefix}bot*
+  ❏ *Harap Sabar Dengan Bug²nya!*
+  ❏ *Gunakan Bot Sebaik-baiknya!*
 ▬▭▬▭▬▭▬▭▬▭▬▭▬
 
-╭══─⊱ ❰ *MAKER MENU* ❱ ⊰─══➤
-╠☞ *${prefix}sticker*
-╠☞ *${prefix}vinta*
-╠☞ *${prefix}avengers*
-╠☞ *${prefix}summer*
-╠☞ *${prefix}sandwrite*
-╠☞ *${prefix}metaldark*
-╠☞ *${prefix}dropwater*
-╠☞ *${prefix}greenneon*
-╠☞ *${prefix}neontext*
-╠☞ *${prefix}sumery*
-╠☞ *${prefix}blood*
-╠☞ *${prefix}firework*
-╠☞ *${prefix}lava*
-║
-╠══─⊱ ❰ *FUN MENU* ❱ ⊰─════➤
-╠☞ *${prefix}mining*
-╠☞ *${prefix}bisakah*
-╠☞ *${prefix}kapankah*
-╠☞ *${prefix}apakah*
-╠☞ *${prefix}rate*
-╠☞ *${prefix}slap*
-╠☞ *${prefix}tampar*
-╠☞ *${prefix}speed*
-║
-╠══─⊱ ❰ *MEDIA MENU* ❱ ⊰─═══➤
-╠☞ *${prefix}toxic*
-╠☞ *${prefix}quotes*
-╠☞ *${prefix}beritahoax*
-╠☞ *${prefix}brainly*
-╠☞ *${prefix}pinterest*
-╠☞ *${prefix}resepmasakan*
-╠☞ *${prefix}igstalk*
-║
-╠══─⊱ ❰ *LIMIT MENU* ❱ ⊰─═══➤
-╠☞ *${prefix}limit*
-╠☞ *${prefix}buylimit*
-╠☞ *${prefix}dompet*
-║
-╠══─⊱ ❰ *NSFW MENU* ❱ ⊰─═══➤
-╠☞ *${prefix}pokemon*
-╠☞ *${prefix}anjing*
-╠☞ *${prefix}1cak*
-║
-╠══─⊱ ❰ *GROUP MENU* ❱ ⊰─══➤
-╠☞ *${prefix}hidetag*
-╠☞ *${prefix}grouplist*
-╠☞ *${prefix}limit*
-╠☞ *${prefix}level*
-╠☞ *${prefix}linkgc*
-╠☞ *${prefix}tagall*
-╠☞ *${prefix}setpp*
-╠☞ *${prefix}add*
-╠☞ *${prefix}kick*
-╠☞ *${prefix}setname*
-╠☞ *${prefix}setdesc*
-╠☞ *${prefix}demote*
-╠☞ *${prefix}promote*
-╠☞ *${prefix}listadmin*
-╠☞ *${prefix}group* [buka/tutup]
-╠☞ *${prefix}leveling* [enable/disable]
-╠☞ *${prefix}nsfw* [1/0]
-╠☞ *${prefix}simih* [1/0]
-╠☞ *${prefix}welcome* [1/0]
-║
-╠══─⊱ ❰ *OWNER MENU* ❱ ⊰─══➤
-╠☞ *${prefix}bc*
-╠☞ *${prefix}bcgc*
-╠☞ *${prefix}kickall*
-╠☞ *${prefix}setreply*
-╠☞ *${prefix}setprefix*
-╠☞ *${prefix}clearall*
-╠☞ *${prefix}block*
-╠☞ *${prefix}unblock*
-╠☞ *${prefix}leave*
-╠☞ *${prefix}event* [1/0]
-╠☞ *${prefix}clone*
-╠☞ *${prefix}setppbot*
-║
-╠══─⊱ ❰ *THANGKS TO* ❱ ⊰─══➤
-║
-╠☞ *AFFIS JUNIANTO*
-╠☞ *FADHIL GRAPHY*
-╠☞ *XPTN (AGUNG)*
-╠☞ *MYBOT TEAM*
-║
-╰════─⊱  ⸨ *AFFIS* ⸩  ⊰─════╯
+◪ *ABOUT*
+  │
+  ├─ ❏ ${prefix}info
+  ├─ ❏ ${prefix}snk
+  ├─ ❏ ${prefix}lpr
+  ├─ ❏ ${prefix}request
+  ├─ ❏ ${prefix}blocklist
+  ├─ ❏ ${prefix}chatlist
+  ├─ ❏ ${prefix}ping
+  └─ ❏ ${prefix}gcainebot
+◪ *MAKER*
+  │
+  ├─ ❏ ${prefix}nulis
+  ├─ ❏ ${prefix}sticker
+  ├─ ❏ ${prefix}stickergif
+  ├─ ❏ ${prefix}toimg
+  ├─ ❏ ${prefix}bplogo
+  ├─ ❏ ${prefix}swlogo
+  ├─ ❏ ${prefix}text3d
+  ├─ ❏ ${prefix}thunder
+  ├─ ❏ ${prefix}glitch
+  ├─ ❏ ${prefix}cloudsky
+  ├─ ❏ ${prefix}quotemaker
+  ├─ ❏ ${prefix}blood
+  ├─ ❏ ${prefix}realcloud
+  ├─ ❏ ${prefix}metaldark
+  ├─ ❏ ${prefix}dropwater
+  ├─ ❏ ${prefix}phlogo
+  ├─ ❏ ${prefix}grenneon
+  ├─ ❏ ${prefix}neontext
+  ├─ ❏ ${prefix}toxic
+  ├─ ❏ ${prefix}sumery
+  ├─ ❏ ${prefix}firework
+  ├─ ❏ ${prefix}lava
+  ├─ ❏ ${prefix}vinta
+  └─ ❏ ${prefix}summer
+◪ *MEDIA*
+  │
+  ├─ ❏ ${prefix}beritahoax
+  ├─ ❏ ${prefix}jadwaltvnow
+  └─ ❏ ${prefix}trendtwit
+◪ *OTHER FITUR*
+  │
+  ├─ ❏ ${prefix}ssweb
+  ├─ ❏ ${prefix}hilih 
+  ├─ ❏ ${prefix}alay
+  ├─ ❏ ${prefix}wiki
+  ├─ ❏ ${prefix}kbbi
+  ├─ ❏ ${prefix}map
+  ├─ ❏ ${prefix}fml
+  ├─ ❏ ${prefix}lirik
+  ├─ ❏ ${prefix}chord
+  ├─ ❏ ${prefix}katabijak
+  ├─ ❏ ${prefix}pantun
+  ├─ ❏ ${prefix}faktaunik
+  ├─ ❏ ${prefix}tafsirmimpi
+  ├─ ❏ ${prefix}infogempa
+  ├─ ❏ ${prefix}infonomor
+  ├─ ❏ ${prefix}quotes
+  ├─ ❏ ${prefix}animequotes
+  └─ ❏ ${prefix}artinama
+◪ *KERANG AJAIB*
+  │
+  ├─ ❏ ${prefix}gantengcek
+  ├─ ❏ ${prefix}cantikcek
+  ├─ ❏ ${prefix}watak
+  ├─ ❏ ${prefix}hobby
+  ├─ ❏ ${prefix}apakah
+  ├─ ❏ ${prefix}kapankah
+  ├─ ❏ ${prefix}rate
+  └─ ❏ ${prefix}bisakah
+◪ *DOWNLOADER*
+  │
+  ├─ ❏ ${prefix}pinterest
+  ├─ ❏ ${prefix}ytmp3
+  ├─ ❏ ${prefix}ytmp4
+  ├─ ❏ ${prefix}fototiktok
+  └─ ❏ ${prefix}joox
+◪ *MEME*
+  │
+  ├─ ❏ ${prefix}meme
+  └─ ❏ ${prefix}memeindo
+◪ *RANDOM PICTUE*
+  │ *ANIME*
+  ├─ ❏ ${prefix}loli
+  ├─ ❏ ${prefix}neko
+  ├─ ❏ ${prefix}waifu
+  ├─ ❏ ${prefix}animecry
+  ├─ ❏ ${prefix}animehug
+  ├─ ❏ ${prefix}osakana
+  ├─ ❏ ${prefix}naruto
+  ├─ ❏ ${prefix}anime
+  ├─ ❏ ${prefix}husbu
+  ├─ ❏ ${prefix}animegirl
+  ├─ ❏ ${prefix}animeboy
+  ├─ ❏ ${prefix}nekonime
+  │
+  │ *RANDOM KPOP
+  ├─ ❏ ${prefix}randomkpop
+  │
+  │ *CARTOON*
+  ├─ ❏ ${prefix}doraemon
+  ├─ ❏ ${prefix}pokemon
+  │
+  │ *ANIMAL*
+  ├─ ❏ ${prefix}anjing
+  ├─ ❏ ${prefix}kucing
+  ├─ ❏ ${prefix}hamster
+  ├─ ❏ ${prefix}kelinci
+  │
+  │ *TRANSPORT*
+  ├─ ❏ ${prefix}mobil
+  ├─ ❏ ${prefix}motor
+  ├─ ❏ ${prefix}sepeda
+  │
+  │ *AESTHETIC*
+  ├─ ❏ ${prefix}blusky
+  ├─ ❏ ${prefix}flower
+  ├─ ❏ ${prefix}icecream
+  ├─ ❏ ${prefix}pemandangan
+  │
+  │ *QUOTES*
+  ├─ ❏ ${prefix}quotesid
+  ├─ ❏ ${prefix}quotesen
+  ├─ ❏ ${prefix}katakata
+  ├─ ❏ ${prefix}motivasi
+  ├─ ❏ ${prefix}kehidupan
+  └─ ❏ ${prefix}islami
+◪ *LIMIT*
+  │
+  ├─ ❏ ${prefix}limit
+  ├─ ❏ ${prefix}buylimit
+  └─ ❏ ${prefix}dompet
+◪ *GROUP*
+  │
+  ├─ ❏ ${prefix}grup [buka/tutup)
+  ├─ ❏ ${prefix}promote
+  ├─ ❏ ${prefix}demote
+  ├─ ❏ ${prefix}tagall
+  ├─ ❏ ${prefix}limit
+  ├─ ❏ ${prefix}hidetag
+  ├─ ❏ ${prefix}grouplist
+  ├─ ❏ ${prefix}add
+  ├─ ❏ ${prefix}kick
+  ├─ ❏ ${prefix}setname
+  ├─ ❏ ${prefix}setdesc
+  ├─ ❏ ${prefix}setpp
+  ├─ ❏ ${prefix}listadmin
+  ├─ ❏ ${prefix}linkgc
+  ├─ ❏ ${prefix}leave
+  ├─ ❏ ${prefix}welcome [1/0]
+  ├─ ❏ ${prefix}nsfw [1/0]
+  ├─ ❏ ${prefix}leveling [1/0]
+  ├─ ❏ ${prefix}level
+  ├─ ❏ ${prefix}delete
+  └─ ❏ ${prefix}simih [1/0]
+◪ *SOUND*
+  │
+  ├─ ❏ ${prefix}play
+  └─ ❏ ${prefix}tts
+◪ *ISLAM*
+  │
+  └─ ❏ ${prefix}quran
+◪ *STALK*
+  │
+  ├─ ❏ ${prefix}tiktokstalk
+  └─ ❏ ${prefix}igstalk
+◪ *WIBU*
+  │
+  ├─ ❏ ${prefix}neonime
+  ├─ ❏ ${prefix}wait
+◪ *18+ Nsfw*
+  |
+  ├─ ❏ ${prefix}randomhentai
+  └─ ❏ ${prefix}nsfwneko
+◪ *FUN*
+  │
+  ├─ ❏ ${prefix}trust
+  ├─ ❏ ${prefix}dare
+  └─ ❏ ${prefix}simi
+◪ *INFORMATION*
+  │
+  ├─ ❏ ${prefix}bahasa
+  ├─ ❏ ${prefix}kodenegara
+  └─ ❏ ${prefix}covid
+◪ *OWNER*
+  │
+  ├─ ❏ ${prefix}setprefix
+  ├─ ❏ ${prefix}setppbot
+  ├─ ❏ ${prefix}block
+  ├─ ❏ ${prefix}setprefix
+  ├─ ❏ ${prefix}leave
+  ├─ ❏ ${prefix}kickall
+  ├─ ❏ ${prefix}event [1/0]
+  ├─ ❏ ${prefix}bc
+  ├─ ❏ ${prefix}bcgc
+  ├─ ❏ ${prefix}clone
+  └─ ❏ ${prefix}clearall
+◪ *OTHER*
+  │
+  ├─ ❏ ${prefix}send
+  ├─ ❏ ${prefix}wame
+  ├─ ❏ ${prefix}qrcode
+  ├─ ❏ ${prefix}afk
+  ├─ ❏ ${prefix}timer
+◪ *POWERED BY AINEBOT*
 `
 }
 
 exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel) => {
 	return`
 *「 SELAMAT 」*
-┏⊱ *Nama* : ${pushname}
-┣⊱ *Nomer* : wa.me/${sender.split("@")[0]}
-┣⊱ *Xp* : ${getLevelingXp(sender)}
-┗⊱ *Level* : ${getLevel} ⊱ ${getLevelingLevel(sender)}
+  ❏ Nama : ${pushname}
+  ❏ Nomer : wa.me/${sender.split("@")[0]}
+  ❏ Xp : ${getLevelingXp(sender)}
+  ❏ Level : ${getLevel} ⊱ ${getLevelingLevel(sender)}
 `}
  
 exports.limitend = (pushname) => {
@@ -252,5 +374,5 @@ exports.satukos = () => {
 }
 
 exports.uangkau = (pushname, sender, uangkau) => {
-	return`*┏⊱ *「 ATM 」* ━┓\n┣⊱ *Nama* : ${pushname}\n┣⊱ *Nomer* : ${sender.split("@")[0]}\n┣⊱ *Uang* : ${uangkau}\n┗━━━━━━━━━━`
+	return`◪ *「 ATM 」*\n  ├─ ❏ *Name* : ${pushname}\n  ├─ ❏ *Nomor* : ${sender.split("@")[0]}\n  ├─ ❏ *Uang* : ${uangkau}`
 }
