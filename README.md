@@ -23,6 +23,8 @@
 ## THANKS TO
 * [`Arugaz`](https://github.com/ArugaZ)
 * [`Toby`](https://github.com/TobyG74)
+* [`affisjunianto`](https://github.com/affisjunianto)
+
 
 ## DONASI
 * [`WhatsApp`](https://wa.me/62895330379186)
