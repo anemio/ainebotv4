@@ -11,6 +11,12 @@
     BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
 </div>
 
+## Thank you the owner of the APIKEY.
+Arugaz
+Toby
+zeks
+jojo
+
 ## AINEBOT
 * [`MY FACEBOOK`](https://www.facebook.com/ainneboot)
 ## THANKS TO
