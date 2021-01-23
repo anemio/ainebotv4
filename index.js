@@ -1722,6 +1722,7 @@ client.on('group-participants-update', async (anu) => {
 			case 'ytmp3':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					reply(ind.wait())
 					if (args.length < 1) return reply('Urlnya mana kak?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.stikga())
 					anu = await fetchJson(`https://arugaz.my.id/api/media/ytmus?url=${args[0]}`, {method: 'get'})
@@ -1737,6 +1738,7 @@ client.on('group-participants-update', async (anu) => {
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(ind.wait())
+					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.stikga())
 					play = body.slice(5)
 					anu = await fetchJson(`api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
 					if (anu.error) return reply(anu.error)
@@ -1745,6 +1747,7 @@ client.on('group-participants-update', async (anu) => {
 					lagu = await getBuffer(anu.result.url_audio)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
 					client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
+					await limitAdd(sender)
 					break
 			case 'joox':
 					if (!isRegistered) return reply(ind.noregis())
