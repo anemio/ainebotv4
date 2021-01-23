@@ -984,6 +984,7 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break 
 			case 'grouplist':
+                        case 'gruplist':
 					if (!isRegistered) return reply(ind.noregis())
 					client.updatePresence(from, Presence.composing) 
 					teks = `\`\`\`Ini adalah list group AINE BOT :\n\n\`\`\``
@@ -1016,21 +1017,21 @@ client.on('group-participants-update', async (anu) => {
 						console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
 						}
 					break
-			case 'mining':
-					if (!isRegistered) return reply(ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pushname))
-					if (!isEventon) return reply(`Maaf ${pushname} event mining tidak di aktifkan oleh owner`)
-					if (isOwner) {
-					const one = 999999999
-					addLevelingXp(sender, one)
-					addLevelingLevel(sender, 99)
-					reply(`Karena kamu, owner kami dari team bot mengirim ${one}Xp untuk anda`)
-					} else{
-					const mining = Math.ceil(Math.random() * 1000)
-					addLevelingXp(sender, mining)
-					await reply(`*Selamat* ${pushname} \n*Kamu mendapatkan* *${mining}Xp*`)
-					}
-					await limitAdd(sender)
+            	case 'mining':
+                      if (!isRegistered) return reply(ind.noregis())
+                      if (isLimit(sender)) return reply(ind.limitend(pushname))
+                      if (!isEventon) return reply(`Maaf ${pushname} event mining belum bisa di gunakan!`)
+                      if (isOwner) {
+                      const one = 999999999
+                      addLevelingXp(sender, one)
+                      addLevelingLevel(sender, 99)
+                      reply(`karena anda owner kami dari team bot mengirim ${one}Xp untuk anda`)
+                      }else{
+                      const mining = Math.ceil(Math.random() * 10000)
+                      addLevelingXp(sender, mining)
+                      await reply(`*selamat* ${pushname} kamu mendapatkan *${mining}Xp*`)
+                      }
+                    await limitAdd(sender)
 					break
 			case 'watak':
 					if (!isRegistered) return reply(ind.noregis())
@@ -2068,10 +2069,10 @@ client.on('group-participants-update', async (anu) => {
 					if (!isGroupAdmins) return reply(ind.admin())
 					if (!isBotGroupAdmins) return reply(ind.badmin())
 					if (args[0] === 'buka') {
-					    reply(`Grup dibuka oleh admin @${sender.split("@")[0]}\nSekarang *semua peserta* dapat mengirim pesan`)
+					    reply(`*BERHASIL MEMBUKA GROUP*`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, false)
 					} else if (args[0] === 'tutup') {
-						reply(`Grup ditutup oleh admin @${nomor.split("@s.whatsapp.net")[0]}\nsekarang *hanya admin* yang dapat mengirim pesan`)
+						reply(`*BERHASIL MENUTUP GROUP*`)
 						client.groupSettingChange(from, GroupSettingChange.messageSend, true)
 					}
 					break      
