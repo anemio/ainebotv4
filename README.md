@@ -11,7 +11,7 @@
     BOT WHATSAPP YANG BISA DIGUNAKAN DI TERMUX
 </div>
 
-# <img src="https://github.com/TheDudeThatCode/TheDudeThatCode/blob/master/Assets/Hi.gif" width="29px"> I'm AINE
+## AINEBOT
 
 ## THANKS TO
 * [`Arugaz`](https://github.com/ArugaZ)
