@@ -1440,7 +1440,7 @@ client.on('group-participants-update', async (anu) => {
 					break
 			case 'doraemon':
 					if (!isRegistered) return reply(ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))) 
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					client.updatePresence(from, Presence.composing) 
 					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=doraemon`, {method: 'get'})
 					reply(ind.wait())
