@@ -87,7 +87,7 @@ exports.cmdnf = (prefix, command) => {
 }
 
 exports.owneresce = (pushname) => {
-	return`*maaf tapi ${pushname} bukan owner script*`
+	return`*Maaf tapi ${pushname} bukan owner script*`
 }
 
 exports.reglevelaha = (command, pushname, getLevelingLevel, sender, aha) => {
@@ -120,8 +120,8 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ◪ *INFO*
   ❏ Prefix: 「  ${prefix}  」
   ❏ Owner: Muhammad Ridwan Reynaldy
+  ------------------------------
   ❏ Nama: ${pushname}
-
   ❏ Uang mu : Rp${uangku}
   ❏ Nomer: wa.me/${sender.split("@")[0]}
   ❏ XP: ${getLevelingXp(sender)}/${reqXp}
@@ -178,6 +178,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ◪ *MEDIA*
   │
   ├─ ❏ ${prefix}beritahoax
+  ├─ ❏ ${prefix}1cak
   ├─ ❏ ${prefix}jadwaltvnow
   └─ ❏ ${prefix}trendtwit
 ◪ *OTHER FITUR*
@@ -190,6 +191,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   ├─ ❏ ${prefix}map
   ├─ ❏ ${prefix}fml
   ├─ ❏ ${prefix}lirik
+  ├─ ❏ ${prefix}brainly
   ├─ ❏ ${prefix}chord
   ├─ ❏ ${prefix}katabijak
   ├─ ❏ ${prefix}pantun
@@ -236,7 +238,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   ├─ ❏ ${prefix}animeboy
   ├─ ❏ ${prefix}nekonime
   │
-  │ *RANDOM KPOP
+  │ *RANDOM KPOP*
   ├─ ❏ ${prefix}randomkpop
   │
   │ *CARTOON*
@@ -293,7 +295,6 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   ├─ ❏ ${prefix}nsfw [1/0]
   ├─ ❏ ${prefix}leveling [1/0]
   ├─ ❏ ${prefix}level
-  ├─ ❏ ${prefix}delete
   └─ ❏ ${prefix}simih [1/0]
 ◪ *SOUND*
   │
@@ -327,8 +328,10 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ◪ *OWNER*
   │
   ├─ ❏ ${prefix}setprefix
+  ├─ ❏ ${prefix}setreply
   ├─ ❏ ${prefix}setppbot
   ├─ ❏ ${prefix}block
+  ├─ ❏ ${prefix}unblock
   ├─ ❏ ${prefix}setprefix
   ├─ ❏ ${prefix}leave
   ├─ ❏ ${prefix}kickall
@@ -343,7 +346,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   ├─ ❏ ${prefix}wame
   ├─ ❏ ${prefix}qrcode
   ├─ ❏ ${prefix}afk
-  ├─ ❏ ${prefix}timer
+  └─ ❏ ${prefix}timer
 ◪ *POWERED BY AINEBOT*
 `
 }
