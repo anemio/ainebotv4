@@ -153,7 +153,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   │
   ├─ ❏ ${prefix}info
   ├─ ❏ ${prefix}snk
-  ├─ ❏ ${prefix}lpr
+  ├─ ❏ ${prefix}lpr 
   ├─ ❏ ${prefix}request
   ├─ ❏ ${prefix}blocklist
   ├─ ❏ ${prefix}ping
@@ -193,26 +193,23 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ◪ *OTHER FITUR*
   │
   ├─ ❏ ${prefix}ssweb
-  ├─ ❏ ${prefix}hilih 
-  ├─ ❏ ${prefix}alay
-  ├─ ❏ ${prefix}wiki
-  ├─ ❏ ${prefix}kbbi
-  ├─ ❏ ${prefix}map
+  ├─ ❏ ${prefix}hilih [teks]
+  ├─ ❏ ${prefix}alay [teks]
+  ├─ ❏ ${prefix}wiki [teks]
+  ├─ ❏ ${prefix}kbbi [teks]
+  ├─ ❏ ${prefix}map [teks]
   ├─ ❏ ${prefix}fml
-  ├─ ❏ ${prefix}lirik
-  ├─ ❏ ${prefix}brainly
-  ├─ ❏ ${prefix}chord
+  ├─ ❏ ${prefix}lirik [teks]
+  ├─ ❏ ${prefix}brainly [teks]
+  ├─ ❏ ${prefix}chord [teks]
   ├─ ❏ ${prefix}katabijak
   ├─ ❏ ${prefix}pantun
   ├─ ❏ ${prefix}faktaunik
   ├─ ❏ ${prefix}tafsirmimpi
-  ├─ ❏ ${prefix}apkpure
-  ├─ ❏ ${prefix}infogempa
-  ├─ ❏ ${prefix}infocuaca
-  ├─ ❏ ${prefix}infonomor
+  ├─ ❏ ${prefix}apkpure [teks]
   ├─ ❏ ${prefix}quotes
   ├─ ❏ ${prefix}animequotes
-  └─ ❏ ${prefix}artinama
+  └─ ❏ ${prefix}artinama [teks]
 ◪ *KERANG AJAIB*
   │
   ├─ ❏ ${prefix}gantengcek
@@ -225,11 +222,11 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   └─ ❏ ${prefix}bisakah
 ◪ *DOWNLOADER*
   │
-  ├─ ❏ ${prefix}pinterest
-  ├─ ❏ ${prefix}ytmp3
-  ├─ ❏ ${prefix}ytmp4
+  ├─ ❏ ${prefix}pinterest [teks]
+  ├─ ❏ ${prefix}ytmp3 [link]
+  ├─ ❏ ${prefix}ytmp4 [link]
   ├─ ❏ ${prefix}fototiktok
-  └─ ❏ ${prefix}joox
+  └─ ❏ ${prefix}joox [teks]
 ◪ *MEME*
   │
   ├─ ❏ ${prefix}meme ❌
@@ -268,7 +265,8 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   ├─ ❏ ${prefix}sepeda
   │
   │ *AESTHETIC*
-  ├─ ❏ ${prefix}blusky
+  ├─ ❏ ${prefix}aesthetic
+  ├─ ❏ ${prefix}bluesky
   ├─ ❏ ${prefix}flower
   ├─ ❏ ${prefix}icecream
   ├─ ❏ ${prefix}pemandangan
@@ -287,29 +285,29 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   └─ ❏ ${prefix}dompet
 ◪ *GROUP*
   │
-  ├─ ❏ ${prefix}promote
-  ├─ ❏ ${prefix}demote
+  ├─ ❏ ${prefix}promote [@tag]
+  ├─ ❏ ${prefix}demote [@tag]
   ├─ ❏ ${prefix}tagall
   ├─ ❏ ${prefix}limit
-  ├─ ❏ ${prefix}say
+  ├─ ❏ ${prefix}say [hello]
   ├─ ❏ ${prefix}grouplist
-  ├─ ❏ ${prefix}add
-  ├─ ❏ ${prefix}kick
+  ├─ ❏ ${prefix}add [62]
+  ├─ ❏ ${prefix}kick [@tag]
   ├─ ❏ ${prefix}setname
   ├─ ❏ ${prefix}setdesc
   ├─ ❏ ${prefix}setpp
   ├─ ❏ ${prefix}listadmin
   ├─ ❏ ${prefix}linkgc
   ├─ ❏ ${prefix}leave
+  ├─ ❏ ${prefix}level
   ├─ ❏ ${prefix}grup [buka/tutup)
   ├─ ❏ ${prefix}welcome [1/0]
   ├─ ❏ ${prefix}nsfw [1/0]
   ├─ ❏ ${prefix}leveling [1/0]
-  ├─ ❏ ${prefix}level
   └─ ❏ ${prefix}simih [1/0]
 ◪ *SOUND*
   │
-  ├─ ❏ ${prefix}play
+  ├─ ❏ ${prefix}play [teks]
   └─ ❏ ${prefix}tts
 ◪ *ISLAM*
   │
@@ -336,6 +334,9 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   │
   ├─ ❏ ${prefix}bahasa
   ├─ ❏ ${prefix}kodenegara
+  ├─ ❏ ${prefix}infogempa
+  ├─ ❏ ${prefix}infocuaca
+  ├─ ❏ ${prefix}infonomor
   └─ ❏ ${prefix}covid
 ◪ *OWNER*
   │
