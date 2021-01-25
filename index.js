@@ -18,8 +18,11 @@ const moment = require("moment-timezone")
 const fs = require("fs") 
 const crypto = require('crypto')
 const imageToBase64 = require('image-to-base64')
+const kagApi = require('@kagchi/kag-api')
 const axios = require('axios')
 const { color, bgcolor } = require('./lib/color')
+const { bahasa } = require('./lib/bahasa')
+const { negara } = require('./lib/kodenegara')
 const { help } = require('./lib/help')
 const { donasi } = require('./lib/donasi')
 const { fetchJson } = require('./lib/fetcher')
@@ -41,7 +44,7 @@ const vcard = 'BEGIN:VCARD\n'
 prefix = '#'
 blocked = []   
 limitawal = '10'
-cr = '*BOT INI SUDAH TERVERIFIKASI*'
+cr = '*AINEBOT THIS IS ALREADY VERIFIED*'
 
 /******** OWNER NUMBER**********/
 const ownerNumber = ["62895330379186@s.whatsapp.net"] 
@@ -956,6 +959,15 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
 					await limitAdd(sender)
 					break 
+			case 'covid':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					data = await fetchJson(`https://arugaz.my.id/api/edu/corona?country=indonesia`)
+					if (data.result) reply(data.result)
+					hasil = `Active : ${data.result.active}\ncasesPerOneMillion : ${data.result.casesPerOneMillion}\ncritical : ${data.result.critical}\ndeathsPerOneMillion : ${data.result.deathsPerOneMillion}\nrecovered : ${data.result.recovered}\ntestPerOneMillion : ${data.result.testPerOneMillion}\ntodayCases : ${data.result.todayCases}\ntodayDeath : ${data.result.todayDeath}\ntotalCases : ${data.result.totalCases}\ntotalTest : ${data.result.totalTest}`
+					reply(hasil)
+					await limitAdd(sender)
+					break
 			case 'trendtwit':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -1147,11 +1159,22 @@ client.on('group-participants-update', async (anu) => {
 					const uangku = checkATMuser(sender)
 					await costum(ind.menu(pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp, _registered, uangku), text, tescuk, cr)
 					break
-
 			case 'donasi':
-					case 'donate':
+			case 'donate':
 					if (!isRegistered) return reply(ind.noregis())
 					client.sendMessage(from, donasi(), text)
+					break
+			case 'bahasa':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					client.sendMessage(from, bahasa(), text)
+					await limitAdd(sender)
+					break
+			case 'kodenegara':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					client.sendMessage(from, negara(), text)
+					await limitAdd(sender)
 					break
 			case 'level':
 					if (!isRegistered) return reply(ind.noregis())
@@ -1199,7 +1222,7 @@ client.on('group-participants-update', async (anu) => {
 					teks += `*Total* : ${totalchat.length}`
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": totalchat}})
 					break
-			case 'hidetag':
+			case 'say':
 			if (!isRegistered) return reply(ind.noregis())
 			if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (!isGroup) return reply(ind.groupo())
@@ -1791,7 +1814,8 @@ client.on('group-participants-update', async (anu) => {
 			case 'joox':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Urlnya mana kak?')
+					reply(ind.wait())
+					if (args.length < 1) return reply('Url/texs nya mana kak?')
 					tels = body.slice(6)
 					data = await fetchJson(`https://tobz-api.herokuapp.com/api/joox?q=${tels}&apikey=BotWeA`, {method: 'get'})
 					if (data.error) return reply(data.error)
