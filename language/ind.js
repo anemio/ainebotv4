@@ -374,8 +374,8 @@ exports.levelup = (pushname, sender, getLevelingXp,  getLevel, getLevelingLevel)
   ❏ Level : ${getLevel} ⊱ ${getLevelingLevel(sender)}`
 }
  
-exports.limitend = (pushname, prefix) => {
-	return`*Maaf ${pushname} limit kamu sudah habis*\n*Ingin mendapatkan limit harap hubungi kami.*\n *Ketik ${prefix}owner`
+exports.limitend = (pushname) => {
+	return`*Maaf ${pushname} limit kamu sudah habis*\n*Ingin mendapatkan limit harap hubungi kami.*\nHubungi : wa.me/62895330379186`
 }
 
 exports.limitcount = (limitCounts) => {
