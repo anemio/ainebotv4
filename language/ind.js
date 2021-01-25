@@ -317,7 +317,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
   └─ ❏ ${prefix}nsfwneko
 ◪ *FUN*
   │
-  ├─ ❏ ${prefix}trust
+  ├─ ❏ ${prefix}truth
   ├─ ❏ ${prefix}dare
   └─ ❏ ${prefix}simi
 ◪ *INFORMATION*
