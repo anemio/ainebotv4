@@ -967,6 +967,17 @@ client.on('group-participants-update', async (anu) => {
 					reply(teks.trim())
 					await limitAdd(sender)
 					break
+			case 'apkpure':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					data = await fetchJson(`https://api.zeks.xyz/api/apkpure?q=${body.slice(9)}&apikey=apivinz`, {method: 'get'})
+					teks = '=================\n'
+					for (let i of data.result) {
+						teks += `*Nama APK* : ${i.title}\n*Link* : ${i.url}\n*Rating* : ${i.rating}\n=================\n`
+					}
+					reply(teks.trim())
+					await limitAdd(sender)
+					break
                         case 'randomkpop':
                                         gatauda = body.slice(10)
 					if (!isRegistered) return reply(ind.noregis())
@@ -1300,6 +1311,16 @@ client.on('group-participants-update', async (anu) => {
 					buff = await getBuffer(anu.map)
 					hasil = `*Potensi*\n${anu.potensi}\n*Lokasi*\n${anu.lokasi}\n*Magnitude*\n${anu.magnitude}\n*Koordinat*\n${anu.koordinat}\n*Kedalaman*\n${anu.kedalaman}\n*Waktu*\n${anu.waktu}\n*Map*\n${anu.map}`
 					client.sendMessage(from, buff, image, {quoted: mek, caption: hasil})
+					await limitAdd(sender)
+					break
+			case 'infocuaca':
+					tels = body.slice(11)
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
+					if (anu.error) return reply(anu.error)
+					hasil = ` *Tempat : ${anu.result.tempat}\nCuaca : ${anu.result.cuaca}\nAngin : ${anu.result.angin}\nSuhu : ${anu.result.suhu}\nKelembapan : ${anu.result.kelembapan}`
+					client.sendMessage(from, hasil, text, {quoted: mek})
 					await limitAdd(sender)
 					break
 			case 'tafsirmimpi':
