@@ -521,6 +521,30 @@ client.on('group-participants-update', async (anu) => {
 				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
 				await limitAdd(sender)
 				break 
+			case 'glitch':
+				if (!isRegistered) return reply(ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (args.length < 1) return reply(ind.wrongf())
+				if (!q.includes('|')) return  reply(ind.wrongf())
+				const aine1 = q.substring(0, q.indexOf('|') - 0)
+				const aine2 = q.substring(q.lastIndexOf('|') + 1)
+				reply(ind.wait())
+				aruga = await getBuffer(`https://arugaz.my.id/api/textpro/glitchtext?text1=${aine1}&text2=${aine2}`)
+				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
+				await limitAdd(sender)
+				break 
+			case 'swlogo2':
+				if (!isRegistered) return reply(ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				if (args.length < 1) return reply(ind.wrongf())
+				if (!q.includes('|')) return  reply(ind.wrongf())
+				const zh1 = q.substring(0, q.indexOf('|') - 0)
+				const zh2 = q.substring(q.lastIndexOf('|') + 1)
+				reply(ind.wait())
+				aruga = await getBuffer(`https://zeksapi.herokuapp.com/api/snowwrite?text1=${zh1}&text2=${zh2}&apikey=apivinz`)
+				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
+				await limitAdd(sender)
+				break 
 			case 'summer':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
