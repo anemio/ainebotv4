@@ -962,8 +962,8 @@ client.on('group-participants-update', async (anu) => {
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					data = await fetchJson(`https://arugaz.my.id/api/edu/corona?country=indonesia`)
-					if (data.result) reply(data.result)
-					hasil = `Active : ${data.result.active}\ncasesPerOneMillion : ${data.result.casesPerOneMillion}\ncritical : ${data.result.critical}\ndeathsPerOneMillion : ${data.result.deathsPerOneMillion}\nrecovered : ${data.result.recovered}\ntestPerOneMillion : ${data.result.testPerOneMillion}\ntodayCases : ${data.result.todayCases}\ntodayDeath : ${data.result.todayDeath}\ntotalCases : ${data.result.totalCases}\ntotalTest : ${data.result.totalTest}`
+					if (data.results) reply(data.results)
+					hasil = `Active : ${data.results.active}\nKasus Persatu Juta : ${data.results.casesPerOneMillion}\nKritis : ${data.results.critical}\nKematian Persatu Juta : ${data.results.deathsPerOneMillion}\nPulih : ${data.results.recovered}\nUji Persatu Juta : ${data.results.testPerOneMillion}\nKasus Hari Ini : ${data.results.todayCases}\nKematian Hari Ini : ${data.results.todayDeath}\nTotal kasus : ${data.results.totalCases}\ntotalTest : ${data.results.totalTest}`
 					reply(hasil)
 					await limitAdd(sender)
 					break
@@ -997,6 +997,16 @@ client.on('group-participants-update', async (anu) => {
                                         anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomkpop?apikey=BotWeA`, {method: 'get'})
                                         buffer = await getBuffer(anu.result)
                                         client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih kpopnya kak...'})
+					await limitAdd(sender)
+                                        break
+                        case 'aesthetic':
+                                        gatauda = body.slice(11)
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					reply(ind.wait())
+                                        anu = await fetchJson(`https://api.zeks.xyz/api/estetikpic?apikey=apivinz`, {method: 'get'})
+                                        buffer = await getBuffer(anu.result)
+                                        client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Nih aestheticnya kak...'})
 					await limitAdd(sender)
                                         break
 			case 'kickall':
@@ -1341,7 +1351,7 @@ client.on('group-participants-update', async (anu) => {
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/cuaca?wilayah=${tels}&apikey=BotWeA`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					hasil = ` *Tempat : ${anu.result.tempat}\nCuaca : ${anu.result.cuaca}\nAngin : ${anu.result.angin}\nSuhu : ${anu.result.suhu}\nKelembapan : ${anu.result.kelembapan}`
+					hasil = ` *Tempat* : ${anu.result.tempat}\n*Cuaca* : ${anu.result.cuaca}\n*Angin* : ${anu.result.angin}\n*Suhu* : ${anu.result.suhu}\n*Kelembapan* : ${anu.result.kelembapan}`
 					client.sendMessage(from, hasil, text, {quoted: mek})
 					await limitAdd(sender)
 					break
