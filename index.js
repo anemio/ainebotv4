@@ -278,7 +278,7 @@ client.on('group-participants-update', async (anu) => {
 				} catch {
 					ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 				}
-				teks = `*Hallo* 👋 @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*\nSemoga betah ya di sini 😅\nJangan lupa intro @${num.split('@')[0]} 😅*`
+				teks = `*Hallo* 👋 @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*\nSemoga betah ya di sini 😅\nJangan lupa intro @${num.split('@')[0]} 😅`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 				} else if (anu.action == 'remove') {
@@ -565,7 +565,7 @@ client.on('group-participants-update', async (anu) => {
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 				if (args.length < 1) return reply(ind.wrongf())
-				aruga = body.slice(12)
+				aruga = body.slice(10)
 				reply(ind.wait())
 				aruga = await getBuffer(`https://arugaz.my.id/api/textpro/cloudsky?text=${aruga}`)
 				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
@@ -578,16 +578,6 @@ client.on('group-participants-update', async (anu) => {
 				aruga = body.slice(7)
 				reply(ind.wait())
 				aruga = await getBuffer(`https://api.zeks.xyz/api/nulis?text=${aruga}&apikey=apivinz`)
-				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
-				await limitAdd(sender)
-				break
-			case 'bplogo':
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-				if (args.length < 1) return reply(ind.wrongf())
-				aruga = body.slice(8)
-				reply(ind.wait())
-				aruga = await getBuffer(`https://arugaz.my.id/api/textpro/blackpink?text=${aruga}`)
 				client.sendMessage(from, aruga, image, {caption: 'Nih kak udah jadi..', quoted: mek})
 				await limitAdd(sender)
 				break
@@ -726,7 +716,7 @@ client.on('group-participants-update', async (anu) => {
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
 				data = await fetchJson(`https://mhankbarbar.tech/api/randomquotes`)
-				ez = `_Quotes : ${data.quotes}_\n_Author : ${data.author}_`
+				ez = `_${data.quotes}_\n\n_${data.author}_`
 				reply(ez)
 				await limitAdd(sender)
 				break
@@ -936,9 +926,9 @@ client.on('group-participants-update', async (anu) => {
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(ind.wait())
-					hmm = await fetchJson(`https://freerestapi.herokuapp.com/api/v1/igs?u=${body.slice(9)}`)
-					buffer = await getBuffer(hmm.data.profilehd)
-					hasil = `Fullname : ${hmm.data.fullname}\npengikut : ${hmm.data.follower}\nMengikuti : ${hmm.data.following}\nPrivate : ${hmm.data.private}\nVerified : ${hmm.data.verified}\nbio : ${hmm.data.bio}`
+					hmm = await fetchJson(`https://arugaz.my.id/api/media/stalkig?user=${body.slice(9)}`)
+					buffer = await getBuffer(hmm.result.profile_picture)
+					hasil = `Username : ${hmm.result.username}\nFullname : ${hmm.result.fullname}\nPengikut : ${hmm.result.followers}\nMengikuti : ${hmm.result.followings}\nBio : ${hmm.data.biography}`
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: hasil})
 					await limitAdd(sender)
 					break 
@@ -1107,10 +1097,14 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
 			case 'speed':
-			case 'ping':
+                        case 'ping':    
 					if (!isRegistered) return reply(ind.noregis())
-					await client.sendMessage(from, `Pong!!!!\nSpeed: ${processTime(time, moment())} _Second_`)
-					break
+                                        const timestamp = speed();
+                                        const latensi = speed() - timestamp
+                                        client.updatePresence(from, Presence.composing) 
+				        uptime = process.uptime()
+                                        client.sendMessage(from, `Speed: *${latensi.toFixed(4)} _Second_*\nDevice: *HOTWAV*\nRAM: *3/64*\nData: *3*\nJaringan: *4G*\nStatus: *Di Charger*`, text, { quoted: mek})
+                                        break
 			case 'help': 
 			case 'menu':
 					if (!isRegistered) return reply(ind.noregis())
@@ -1132,7 +1126,7 @@ client.on('group-participants-update', async (anu) => {
 					const userXp = getLevelingXp(sender)
 					if (userLevel === undefined && userXp === undefined) return reply(ind.lvlnul())
 					const requiredXp = 5000 * (Math.pow(2, userLevel) - 1)
-					resul = `◪ *LEVEL*\n  ├─ ❏ *Name* : ${pushname}\n  ├─ ❏ *Nomor* : wa.me/${sender.split("@")[0]}\n  ├─ ❏ *User XP* : ${userXp}/${requiredXp}\n  └─ ❏ *User Level* : ${userLevel}\n`
+					resul = `◪ *LEVEL*\n  ├─ ❏ *Name* : ${pushname}\n  ├─ ❏ *Nomor* : ${sender.split("@")[0]}\n  ├─ ❏ *User XP* : ${userXp}/${requiredXp}\n  └─ ❏ *User Level* : ${userLevel}\n`
 					client.sendMessage(from, resul, text, { quoted: mek})
 					.catch(async (err) => {
 					console.error(err)
@@ -1711,13 +1705,13 @@ client.on('group-participants-update', async (anu) => {
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply('Urlnya mana kak?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.stikga())
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
+					anu = await fetchJson(`https://arugaz.my.id/api/media/ytvid?url=${args[0]}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					teks = `❏ *Title* : ${anu.title}\n\n❏ *Tunggu Bentar Ya Kak, Vidoenya Lagi Di Kirim...*`
-					thumb = await getBuffer(anu.thumb)
+					teks = `❏ *Title* : ${anu.titleInfo}\n\n❏ *Tunggu Bentar Ya Kak, Vidoenya Lagi Di Kirim...*`
+					thumb = await getBuffer(anu.getImages)
 					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
+					buffer = await getBuffer(anu.getVideo)
+					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.titleInfo}.mp4`, quoted: mek})
 					await limitAdd(sender)
 					break
 			case 'ytmp3':
@@ -1740,9 +1734,9 @@ client.on('group-participants-update', async (anu) => {
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					reply(ind.wait())
 					play = body.slice(5)
-					anu = await fetchJson(`api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
+					anu = await fetchJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=apivinz`)
 					if (anu.error) return reply(anu.error)
-					infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nSource : ${anu.result.source}\nUkuran : ${anu.result.size}\n\n*TUNGGU SEBENTAR LAGI DIKIRIM MOHON JANGAN SPAM YA KAK!*`
+					infomp3 = `*Lagu Ditemukan!!!*\nJudul : ${anu.result.title}\nSource : ${anu.result.source}\nUkuran : ${anu.result.size}\n\n*TUNGGU SEBENTAR LAGI DIKIRIM MOHON JANGAN SPAM YA SAYANG*`
 					buffer = await getBuffer(anu.result.thumbnail)
 					lagu = await getBuffer(anu.result.url_audio)
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
@@ -1839,20 +1833,19 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage('62895330379186@s.whatsapp.net', options, text, {quoted: mek})
 					reply('Masalah telah di laporkan ke owner AINEBOT, Laporan palsu atau main² tidak akan ditanggapi.')
 					break
-                case 'request':
-                     const cfrr = body.slice(8)
-                      if (cfrr.length > 300) return client.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
-                        var nomor = mek.participant
-                       const ress = `*[REQUEST VITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
-
-                      var options = {
-                         text: ress,
-                         contextInfo: {mentionedJid: [nomor]},
-                     }
-                    client.sendMessage('62895330379186@s.whatsapp.net', options, text, {quoted: mek})
-                    client.sendMessage('6285156459328@s.whatsapp.net', options, text, {quoted: mek})
-                    reply('REQUEST ANDA TELAH SAMPAI KE OWNER AINEBOT, Requests palsu atau main² tidak akan ditanggapi.')
-                    break
+			case 'request':
+					const cfrr = body.slice(8)
+					if (cfrr.length > 300) return client.sendMessage(from, 'Maaf Teks Terlalu Panjang, Maksimal 300 Teks', msgType.text, {quoted: mek})
+					var nomor = mek.participant
+					const ress = `*[REQUEST VITUR]*\nNomor : @${nomor.split("@s.whatsapp.net")[0]}\nPesan : ${cfrr}`
+							var options = {
+							text: ress,
+                         				contextInfo: {mentionedJid: [nomor]},
+                     			}
+					client.sendMessage('62895330379186@s.whatsapp.net', options, text, {quoted: mek})
+					client.sendMessage('6285156459328@s.whatsapp.net', options, text, {quoted: mek})
+					reply('REQUEST ANDA TELAH SAMPAI KE OWNER AINEBOT, Requests palsu atau main² tidak akan ditanggapi.')
+					break
 			case 'stickergif':
 			case 'stikergif':
 			case 'sgif':
@@ -1970,10 +1963,10 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
 			case 'gcainebot':
-					if (!isRegistered) return reply(ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					client.sendMessage(from, 'https://chat.whatsapp.com/EYGeuRbVFkfI8JrH3cNrGV',MessageType.text, { quoted: mek} )
-					await limitAdd(sender)
+					break
+			case 'bot':
+					client.sendMessage(from, 'Iya kak? \nJangan lupa daftar iya kak ^_^"',MessageType.text, { quoted: mek} )
 					break
 			case 'tagall':
 					if (!isGroup) return reply(ind.groupo())
